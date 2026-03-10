@@ -11,8 +11,7 @@ botao.addEventListener("click", function(){
 
 let input = document.querySelector("#nome");
 let resultado = document.querySelector("#resultado");
-let troca = document.querySelector("#troca")
-troca.addEventListener("click", function(){
+input.addEventListener("keyup", function(){
     resultado.textContent = input.value;
 });
 
