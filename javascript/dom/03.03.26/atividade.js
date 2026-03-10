@@ -20,13 +20,13 @@ vermelho.addEventListener("click", function(){
 let botao = document.querySelector("#botao");
 botao.textContent = "Esconder/Mostrar";
 let mensagem = document.querySelector("#mensagem");
-
+mensagem.textContent = "Hello world";
 
 botao.addEventListener("click", function(){
-    if(mensagem.textContent == "Hello world"){
-        mensagem.textContent = "";
-    }else{
+    if(mensagem.textContent == ""){
         mensagem.textContent = "Hello world";
+    }else{
+        mensagem.textContent = "";
     }
 })
 
@@ -81,6 +81,20 @@ enviar.addEventListener("click", function(){
     }else{
         escrita.textContent = "Nome enviado com sucesso";
         document.querySelector('#escrita').style.color = "green "
+    }
+});
+
+//exercício de validação
+let email = document.querySelector('#email');
+let validar = document.querySelector('#validar');
+let veri = document.querySelector('#veri');
+validar.addEventListener("click", function(){
+    if(email.textContent.includes("@") && email.textContent.includes(".")){
+        veri.textContent = "Email validado com sucesso";
+        document.querySelector('#veri').style.color = 'green';
+    }else{
+        veri.textContent = "É necessário conter @ e . no email!";
+        document.querySelector('#veri').style.color = 'red';
     }
 });
 
