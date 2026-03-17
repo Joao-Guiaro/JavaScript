@@ -89,7 +89,7 @@ let email = document.querySelector('#email');
 let validar = document.querySelector('#validar');
 let veri = document.querySelector('#veri');
 validar.addEventListener("click", function(){
-    if(email.textContent.includes("@") && email.textContent.includes(".")){
+    if(email.value.includes("@") && email.value.includes(".")){
         veri.textContent = "Email validado com sucesso";
         document.querySelector('#veri').style.color = 'green';
     }else{
@@ -97,5 +97,12 @@ validar.addEventListener("click", function(){
         document.querySelector('#veri').style.color = 'red';
     }
 });
+
+let senha = document.querySelector('#senha')
+let caracter = document.querySelector('#caracter')
+senha.addEventListener("keyup", function(){
+    caracter.textContent = senha.value
+
+})
 
 
