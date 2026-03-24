@@ -75,8 +75,8 @@ let enviar = document.querySelector('#enviar');
 let escrita = document.querySelector('#escrita');
 
 enviar.addEventListener("click", function(){
-    if (nome.value.trim() == ""){
-        escrita.textContent = "O campo nome é obrigatório";
+    if (nome.value.trim() == "" || /^[0-9.,?;:!@#$%¨&*()_+=\|?¹²³]+$/.test(nome.value)){
+        escrita.textContent = "Preencha o campo com letras";
         document.querySelector('#escrita').style.color = "red"
     }else{
         escrita.textContent = "Nome enviado com sucesso";
@@ -89,11 +89,11 @@ let email = document.querySelector('#email');
 let validar = document.querySelector('#validar');
 let veri = document.querySelector('#veri');
 validar.addEventListener("click", function(){
-    if(email.value.includes("@") && email.value.includes(".")){
+    if(email.value.includes("@") && email.value.includes(".com")){
         veri.textContent = "Email validado com sucesso";
         document.querySelector('#veri').style.color = 'green';
     }else{
-        veri.textContent = "É necessário conter @ e . no email!";
+        veri.textContent = "É necessário conter '@' e '.com' no email!";
         document.querySelector('#veri').style.color = 'red';
     }
 });
@@ -101,7 +101,16 @@ validar.addEventListener("click", function(){
 let senha = document.querySelector('#senha')
 let caracter = document.querySelector('#caracter')
 senha.addEventListener("keyup", function(){
-    caracter.textContent = senha.value
+    if(senha.value.length <6 ){
+        caracter.textContent = "Senha fraca";
+        caracter.style.color = 'red';
+    }else if(senha.value.length >= 6 && senha.value.length < 10){
+        caracter.textContent = "Senha aceitável";
+        caracter.style.color = 'orange';
+    }else{
+        caracter.textContent = "Senha forte";
+        caracter.style.color = 'green';
+    }
 
 })
 
