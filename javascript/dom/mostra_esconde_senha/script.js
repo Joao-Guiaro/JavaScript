@@ -1,6 +1,6 @@
 let olho = document.querySelector("#botaosenha");
 let input = document.querySelector("#senha");
-olho.addEventListener("click", function(){
+olho.addEventListener("hover", function(){
     if(input.type === "password"){
         input.setAttribute('type', 'text');
         olho.classList.replace('bi-eye-fill', 'bi-eye-slash-fill');

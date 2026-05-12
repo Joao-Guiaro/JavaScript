@@ -87,3 +87,6 @@ function junta(nome, curso) {
     return "Aluno: " + nome + "| Curso: " + curso;
 }
 console.log(junta("José", "Front-End"));
+
+let soma = 10 + 5 * 2
+console.log(soma)
